@@ -19,3 +19,15 @@ yarn install
 
 yarn dev
 ```
+
+### 참고
+
+- react-query : https://github.com/ruslan4432013/fsd-react-query-example
+
+- https://emewjin.github.io/feature-sliced-design/?utm_source=substack&utm_medium=email
+
+- https://feature-sliced.design/
+
+- https://github.com/noveogroup-amorgunov/nukeapp
+
+- https://github.com/falkomerr/falkchat
