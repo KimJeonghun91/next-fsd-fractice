@@ -1,9 +1,21 @@
+"use client"
+
 import Image from "next/image";
+import Button from 'my-mui/material/Button';
 import styles from "./home.module.css";
+import { LocalizationProvider } from 'my-mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from 'my-mui/x-date-pickers/AdapterDayjs';
+import { DateCalendar } from 'my-mui/x-date-pickers/DateCalendar';
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Button variant="contained">Hello world</Button>;
+
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DateCalendar />
+      </LocalizationProvider>
+
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
