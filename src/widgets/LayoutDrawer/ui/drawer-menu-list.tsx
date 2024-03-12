@@ -28,6 +28,7 @@ const DrawerMenuList: React.FC<Props> = ({ open, menuList }) => {
                                 minWidth: 0,
                                 mr: open ? 2 : 'auto',
                                 justifyContent: 'center',
+                                alignItems: 'center'
                             }}
                         >
                             {item.labelIcon}

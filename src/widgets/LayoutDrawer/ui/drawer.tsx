@@ -21,7 +21,7 @@ const Drawer: React.FC<Props> = ({ menuList, open }) => {
         closedMixin,
     } = useLayoutDrawer();
 
-    const DrawerContainer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+    const DrawerContainer = styled(MuiDrawer)(
         ({ theme, open }) => ({
             width: drawerWidth,
             flexShrink: 0,
@@ -39,7 +39,7 @@ const Drawer: React.FC<Props> = ({ menuList, open }) => {
     );
 
     return (
-        <DrawerContainer variant="permanent" open={open} sx={{ position: 'relative', overflow: 'visible' }}>
+        <DrawerContainer variant="permanent" open={open}>
             <DrawerHeader open={open} />
             <Divider />
             <DrawerMenuList menuList={menuList} open={open} />
