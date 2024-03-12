@@ -10,7 +10,7 @@ import { DateCalendar } from 'my-mui/x-date-pickers/DateCalendar';
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Button variant="contained">Hello world</Button>;
+      <Button variant="contained">Hello world</Button>
 
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar />

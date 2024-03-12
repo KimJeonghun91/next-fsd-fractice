@@ -22,6 +22,11 @@ yarn install
 yarn dev
 ```
 
+### TODO
+
+[ ] state 공유를 하려면 전역 상태관리가 최선일까?
+
+
 ### 참고
 
 - react-query : https://github.com/ruslan4432013/fsd-react-query-example

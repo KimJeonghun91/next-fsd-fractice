@@ -4,7 +4,8 @@ import type { Metadata, Viewport } from 'next';
 import { StyledEngineProvider } from 'my-mui/material/styles';
 import { Noto_Sans_KR } from "next/font/google";
 import Box from 'my-mui/material/Box';
-import { LayoutDrawer } from '@/widgets/LayoutDrawer';
+import { DRAWER_MENU_LIST } from "@/shared/constants/drawerMenuList";
+import LayoutDrawer from "@/widgets/LayoutDrawer";
 
 const defaultFont = Noto_Sans_KR({ subsets: ["latin"] });
 
@@ -38,7 +39,7 @@ export default function RootLayout({
       <html lang="ko">
         <body className={defaultFont.className}>
           <Box sx={{ display: 'flex' }}>
-            <LayoutDrawer />
+            <LayoutDrawer menuList={DRAWER_MENU_LIST} />
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               {children}
             </Box>

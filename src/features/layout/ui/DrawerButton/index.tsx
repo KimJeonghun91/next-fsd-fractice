@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IconRightOpen } from '@Img/index';
+import { IconRightOpen } from '@/shared/assets/images/index';
 import IconButton from 'my-mui/material/IconButton';
 
 interface Props {
