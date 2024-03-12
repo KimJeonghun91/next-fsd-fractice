@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_KR } from "next/font/google";
+import Box from 'my-mui/material/Box';
 import "@/shared/styles/globals.css";
+import { LayoutDrawer } from '@/widgets/LayoutDrawer';
 
 const defaultFont = Noto_Sans_KR({ subsets: ["latin"] });
 
@@ -32,7 +34,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={defaultFont.className}>{children}</body>
+      <body className={defaultFont.className}>
+        <Box sx={{ display: 'flex' }}>
+          <LayoutDrawer />
+          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            {children}
+          </Box>
+        </Box>
+      </body>
     </html>
   );
 }
