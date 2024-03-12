@@ -1,10 +1,10 @@
 import "@/shared/styles/globals.css";
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
+import { StyledEngineProvider } from 'my-mui/material/styles';
 import { Noto_Sans_KR } from "next/font/google";
-import { Box, IconButton } from 'my-mui/material';
+import Box from 'my-mui/material/Box';
 import { LayoutDrawer } from '@/widgets/LayoutDrawer';
-import { IconMenuFold } from '@Img/index';
 
 const defaultFont = Noto_Sans_KR({ subsets: ["latin"] });
 
@@ -34,15 +34,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body className={defaultFont.className}>
-        <Box sx={{ display: 'flex' }}>
-          <LayoutDrawer />
-          <Box component="main" sx={{ flexGrow: 1, p: 3, zIndex: 999 }}>
-            {children}
+    <StyledEngineProvider injectFirst>
+      <html lang="ko">
+        <body className={defaultFont.className}>
+          <Box sx={{ display: 'flex' }}>
+            <LayoutDrawer />
+            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+              {children}
+            </Box>
           </Box>
-        </Box>
-      </body>
-    </html>
+        </body>
+      </html>
+    </StyledEngineProvider>
   );
 }
