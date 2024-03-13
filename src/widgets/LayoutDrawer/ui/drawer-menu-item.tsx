@@ -3,26 +3,45 @@ import ListItem from 'my-mui/material/ListItem';
 import ListItemButton from 'my-mui/material/ListItemButton';
 import ListItemIcon from 'my-mui/material/ListItemIcon';
 import ListItemText from 'my-mui/material/ListItemText';
+import { useRouter } from 'next/navigation';
 import { DrawerMenuProps } from '../model/types';
 import { Box, Collapse } from 'my-mui/material';
 import DrawerMenuSub from './drawer-menu-item-sub';
 import UpArrow from '@/shared/assets/images/UpArrow';
 import { SvgBox } from '@/shared/ui/svgBox';
+import useLayoutDrawer from '../model/useLayoutDrawer';
 
 interface Props {
     menuItem: DrawerMenuProps;
     pathName: string;
     open: boolean;
-    isSubMenuOpen: boolean;
-    handleToggleSubMenu: () => void;
 }
 
-const DrawerMenuItem: React.FC<Props> = ({ menuItem, pathName, handleToggleSubMenu, open, isSubMenuOpen }) => {
+const DrawerMenuItem: React.FC<Props> = ({
+    menuItem,
+    pathName,
+    open,
+}) => {
+    const {
+        isSubMenuOpen,
+        handleToggleSubMenu
+    } = useLayoutDrawer();
+
+    const router = useRouter();
+
+    const handleClick = () => {
+        if (menuItem.subMenu && menuItem.subMenu.length > 0) {
+            handleToggleSubMenu();
+        } else {
+            router.push(menuItem.path);
+        };
+    };
+
     return (
         <Box sx={{ px: 0.8 }}>
             <ListItem disablePadding sx={{ display: 'block' }}>
                 <ListItemButton
-                    onClick={menuItem.subMenu && menuItem.subMenu.length > 0 ? handleToggleSubMenu : () => { }}
+                    onClick={handleClick}
                     selected={menuItem.path === pathName}
                     sx={{
                         height: 36,
@@ -64,7 +83,7 @@ const DrawerMenuItem: React.FC<Props> = ({ menuItem, pathName, handleToggleSubMe
                         <SvgBox
                             svg={<UpArrow />}
                             sx={{
-                                transform: isSubMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                                transform: isSubMenuOpen ? 'rotate(0deg)' : 'rotate(180deg)',
                                 transition: 'transform 0.3s',
                             }}
                         />
@@ -72,11 +91,18 @@ const DrawerMenuItem: React.FC<Props> = ({ menuItem, pathName, handleToggleSubMe
                 </ListItemButton>
             </ListItem>
 
-            <Collapse in={isSubMenuOpen} timeout="auto" unmountOnExit>
-                {menuItem?.subMenu?.map((subMenuItem, subIndex) => (
-                    <DrawerMenuSub key={subIndex} menuItem={subMenuItem} isSelected={subMenuItem.path === pathName} open={open} />
-                ))}
-            </Collapse>
+            {
+                open && (
+                    <Collapse in={isSubMenuOpen} timeout="auto" unmountOnExit>
+                        {menuItem?.subMenu?.map((subMenuItem, subIndex) => (
+                            <DrawerMenuSub key={subIndex} menuItem={subMenuItem} isSelected={subMenuItem.path === pathName} open={open} />
+                        ))}
+                    </Collapse>
+                )
+            }
+
+            {/* // TODO: 툴팁 형태 띄우기 */}
+            <Box sx={{}}></Box>
         </Box>
     )
 }

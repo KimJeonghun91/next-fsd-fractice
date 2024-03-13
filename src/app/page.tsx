@@ -1,6 +1,6 @@
-import { HomePage } from "./home";
+import Home from "./home";
 
 const Page = async ({}) => {
-    return <HomePage />;
+    return <Home />
 };
 export default Page;

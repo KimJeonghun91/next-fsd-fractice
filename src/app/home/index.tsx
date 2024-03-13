@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Button from 'my-mui/material/Button';
-import styles from "./home.module.css";
+import styles from "./ui/home.module.css";
 import { LocalizationProvider } from 'my-mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from 'my-mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from 'my-mui/x-date-pickers/DateCalendar';

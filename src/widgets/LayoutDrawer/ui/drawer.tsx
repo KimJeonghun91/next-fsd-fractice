@@ -9,21 +9,17 @@ import DrawerMenuList from './drawer-menu-list';
 interface Props {
     open: boolean;
     menuList: DrawerMenuProps[];
-    isSubMenuOpen: boolean;
     drawerWidth: number;
     openedMixin: (theme: Theme) => CSSObject;
     closedMixin: (theme: Theme) => CSSObject;
-    handleToggleSubMenu: () => void;
 }
 
 const Drawer: React.FC<Props> = ({
     menuList,
     open,
-    isSubMenuOpen,
     drawerWidth,
     openedMixin,
     closedMixin,
-    handleToggleSubMenu
 }) => {
     const DrawerContainer = styled(MuiDrawer)(
         ({ theme, open }) => ({
@@ -46,7 +42,7 @@ const Drawer: React.FC<Props> = ({
         <DrawerContainer variant="permanent" open={open}>
             <DrawerHeader open={open} />
             <Divider />
-            <DrawerMenuList menuList={menuList} open={open} isSubMenuOpen={isSubMenuOpen} handleToggleSubMenu={handleToggleSubMenu} />
+            <DrawerMenuList menuList={menuList} open={open} />
         </DrawerContainer>
     )
 }

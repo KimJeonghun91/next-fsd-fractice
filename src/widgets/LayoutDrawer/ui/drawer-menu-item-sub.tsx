@@ -1,18 +1,22 @@
 import ListItem from 'my-mui/material/ListItem';
 import ListItemButton from 'my-mui/material/ListItemButton';
 import ListItemText from 'my-mui/material/ListItemText';
-import { DrawerMenuProps } from '../model/types';
+import { useRouter } from 'next/navigation';
+import { DrawerMenuSubProps } from '../model/types';
 
 interface Props {
-    menuItem: DrawerMenuProps;
+    menuItem: DrawerMenuSubProps;
     open: boolean;
     isSelected: boolean;
 }
 
 const DrawerMenuSub: React.FC<Props> = ({ menuItem, isSelected, open }) => {
+    const router = useRouter();
+
     return (
         <ListItem disablePadding sx={{ display: 'block' }}>
             <ListItemButton
+                onClick={() => router.push(menuItem.path)}
                 selected={isSelected}
                 sx={{
                     height: 32,

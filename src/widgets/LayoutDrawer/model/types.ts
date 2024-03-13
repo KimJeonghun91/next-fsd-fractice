@@ -2,7 +2,7 @@ import {  Theme, CSSObject } from "my-mui/material";
 
 export interface DrawerMenuSubProps {
     title: string;
-    labelIcon: React.ReactElement;
+    labelIcon?: React.ReactElement;
     path: string;
 }
 
@@ -10,9 +10,8 @@ export interface DrawerMenuProps {
     title: string;
     labelIcon: React.ReactElement;
     path: string;
-    subMenu?: DrawerMenuProps[];
+    subMenu?: DrawerMenuSubProps[] | [];
 }
-
 
 export interface UseLayoutDrawerProps {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;

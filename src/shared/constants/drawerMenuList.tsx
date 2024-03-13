@@ -14,17 +14,17 @@ export const DRAWER_MENU_LIST = [
         subMenu: [
             {
                 title: '보드1',
-                path: PrivateRoutes.Home,
+                path: PrivateRoutes.Board,
                 includePaths: [],
             },
             {
                 title: '보드2',
-                path: PrivateRoutes.Home,
+                path: PrivateRoutes.Board,
                 includePaths: [],
             },
             {
                 title: '보드3',
-                path: PrivateRoutes.Home,
+                path: PrivateRoutes.Board,
                 includePaths: [],
             },
         ],

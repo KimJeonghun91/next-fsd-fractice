@@ -5,10 +5,15 @@ const useLayoutDrawer = () => {
     const [open, setOpen] = useState(false);
     const [isSubMenuOpen, setSubMenuOpen] = useState(false);
     const drawerWidth = 240;
-
     const handleToggleSubMenu = () => setSubMenuOpen(!isSubMenuOpen);
 
-    const handleDrawer = () => setOpen((prev) => !prev);
+    const handleDrawer = () => {
+        setOpen((prev) => {
+            setSubMenuOpen(false);
+            return !prev
+        });
+
+    };
 
     const openedMixin = (theme: Theme): CSSObject => ({
         width: drawerWidth,

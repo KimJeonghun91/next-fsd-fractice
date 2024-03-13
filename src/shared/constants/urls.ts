@@ -8,4 +8,5 @@ export const Login = '/login';
  */
 export const PrivateRoutes = {
     Home: '/home',
+    Board: '/Board',
 };

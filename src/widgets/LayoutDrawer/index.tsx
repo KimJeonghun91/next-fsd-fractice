@@ -18,8 +18,6 @@ const LayoutDrawer: React.FC<Props> = ({ menuList }) => {
         handleDrawer,
         openedMixin,
         closedMixin,
-        isSubMenuOpen,
-        handleToggleSubMenu
      } = useLayoutDrawer();
 
     return (
@@ -27,11 +25,9 @@ const LayoutDrawer: React.FC<Props> = ({ menuList }) => {
             <Drawer
                 menuList={menuList}
                 open={open}
-                isSubMenuOpen={isSubMenuOpen}
                 drawerWidth={drawerWidth}
                 openedMixin={openedMixin}
                 closedMixin={closedMixin}
-                handleToggleSubMenu={handleToggleSubMenu}
             />
             <DrawerButton
                 handleDrawer={handleDrawer}
