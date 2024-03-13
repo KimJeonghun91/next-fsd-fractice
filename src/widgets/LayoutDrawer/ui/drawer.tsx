@@ -1,26 +1,30 @@
-"use client";
-
 import React from 'react';
 import MuiDrawer from 'my-mui/material/Drawer';
 import Divider from 'my-mui/material/Divider';
-import { styled } from 'my-mui/material/styles';
-import { DrawerMenuProps, UseLayoutDrawerProps } from '../model/types';
+import { CSSObject, Theme, styled } from 'my-mui/material/styles';
+import { DrawerMenuProps } from '../model/types';
 import DrawerHeader from './drawer-header';
 import DrawerMenuList from './drawer-menu-list';
 
 interface Props {
+    open: boolean;
     menuList: DrawerMenuProps[];
-    useLayoutDrawer: UseLayoutDrawerProps;
+    isSubMenuOpen: boolean;
+    drawerWidth: number;
+    openedMixin: (theme: Theme) => CSSObject;
+    closedMixin: (theme: Theme) => CSSObject;
+    handleToggleSubMenu: () => void;
 }
 
-const Drawer: React.FC<Props> = ({ menuList, useLayoutDrawer }) => {
-    const {
-        open,
-        drawerWidth,
-        openedMixin,
-        closedMixin,
-    } = useLayoutDrawer;
-
+const Drawer: React.FC<Props> = ({
+    menuList,
+    open,
+    isSubMenuOpen,
+    drawerWidth,
+    openedMixin,
+    closedMixin,
+    handleToggleSubMenu
+}) => {
     const DrawerContainer = styled(MuiDrawer)(
         ({ theme, open }) => ({
             width: drawerWidth,
@@ -42,7 +46,7 @@ const Drawer: React.FC<Props> = ({ menuList, useLayoutDrawer }) => {
         <DrawerContainer variant="permanent" open={open}>
             <DrawerHeader open={open} />
             <Divider />
-            <DrawerMenuList menuList={menuList} useLayoutDrawer={useLayoutDrawer} />
+            <DrawerMenuList menuList={menuList} open={open} isSubMenuOpen={isSubMenuOpen} handleToggleSubMenu={handleToggleSubMenu} />
         </DrawerContainer>
     )
 }

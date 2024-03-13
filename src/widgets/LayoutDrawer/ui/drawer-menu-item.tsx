@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ListItem from 'my-mui/material/ListItem';
 import ListItemButton from 'my-mui/material/ListItemButton';
 import ListItemIcon from 'my-mui/material/ListItemIcon';
 import ListItemText from 'my-mui/material/ListItemText';
-import { DrawerMenuProps, UseLayoutDrawerProps } from '../model/types';
+import { DrawerMenuProps } from '../model/types';
 import { Box, Collapse } from 'my-mui/material';
 import DrawerMenuSub from './drawer-menu-item-sub';
 import UpArrow from '@/shared/assets/images/UpArrow';
@@ -12,19 +12,12 @@ import { SvgBox } from '@/shared/ui/svgBox';
 interface Props {
     menuItem: DrawerMenuProps;
     pathName: string;
-    useLayoutDrawer: UseLayoutDrawerProps;
+    open: boolean;
+    isSubMenuOpen: boolean;
+    handleToggleSubMenu: () => void;
 }
 
-const DrawerMenuItem: React.FC<Props> = ({ menuItem, pathName, useLayoutDrawer }) => {
-    const {
-        // handleToggleSubMenu,
-        open,
-        // isSubMenuOpen
-    } = useLayoutDrawer;
-
-    const [isSubMenuOpen, setSubMenuOpen] = useState(false);
-    const handleToggleSubMenu = () => setSubMenuOpen(!isSubMenuOpen);
-
+const DrawerMenuItem: React.FC<Props> = ({ menuItem, pathName, handleToggleSubMenu, open, isSubMenuOpen }) => {
     return (
         <Box sx={{ px: 0.8 }}>
             <ListItem disablePadding sx={{ display: 'block' }}>

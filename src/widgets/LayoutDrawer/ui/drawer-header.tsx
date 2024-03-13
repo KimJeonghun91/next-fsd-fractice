@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { styled } from 'my-mui/material/styles';
 import { IconButton } from 'my-mui/material';
