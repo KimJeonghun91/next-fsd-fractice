@@ -40,6 +40,7 @@ export default function RootLayout({
         <body className={defaultFont.className}>
           <Box sx={{ display: 'flex' }}>
             <LayoutDrawer menuList={DRAWER_MENU_LIST} />
+            
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               {children}
             </Box>

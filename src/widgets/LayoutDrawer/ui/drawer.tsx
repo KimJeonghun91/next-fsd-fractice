@@ -4,12 +4,12 @@ import React from 'react';
 import MuiDrawer from 'my-mui/material/Drawer';
 import Divider from 'my-mui/material/Divider';
 import { styled } from 'my-mui/material/styles';
-import { DrawerMenuItem, UseLayoutDrawerProps } from '../model/types';
+import { DrawerMenuProps, UseLayoutDrawerProps } from '../model/types';
 import DrawerHeader from './drawer-header';
 import DrawerMenuList from './drawer-menu-list';
 
 interface Props {
-    menuList: DrawerMenuItem[];
+    menuList: DrawerMenuProps[];
     useLayoutDrawer: UseLayoutDrawerProps;
 }
 
@@ -42,7 +42,7 @@ const Drawer: React.FC<Props> = ({ menuList, useLayoutDrawer }) => {
         <DrawerContainer variant="permanent" open={open}>
             <DrawerHeader open={open} />
             <Divider />
-            <DrawerMenuList menuList={menuList} open={open} />
+            <DrawerMenuList menuList={menuList} useLayoutDrawer={useLayoutDrawer} />
         </DrawerContainer>
     )
 }

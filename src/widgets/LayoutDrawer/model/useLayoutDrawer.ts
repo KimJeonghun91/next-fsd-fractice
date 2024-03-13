@@ -1,9 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
 import { Theme, CSSObject } from 'my-mui/material/styles';
 
 const useLayoutDrawer = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const drawerWidth = 240;
+
+    // const [isSubMenuOpen, setSubMenuOpen] = useState(false);
+    // const handleToggleSubMenu = () => setSubMenuOpen(!isSubMenuOpen);
 
     const handleDrawer = () => setOpen((prev) => !prev);
 
@@ -34,7 +37,9 @@ const useLayoutDrawer = () => {
         drawerWidth,
         handleDrawer,
         openedMixin,
-        closedMixin
+        closedMixin,
+        // isSubMenuOpen,
+        // handleToggleSubMenu
     }
 }
 

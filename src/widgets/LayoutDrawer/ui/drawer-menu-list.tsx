@@ -1,41 +1,21 @@
-
-import ListItem from 'my-mui/material/ListItem';
-import ListItemButton from 'my-mui/material/ListItemButton';
-import ListItemIcon from 'my-mui/material/ListItemIcon';
-import ListItemText from 'my-mui/material/ListItemText';
 import List from 'my-mui/material/List';
-import { DrawerMenuItem } from '../model/types';
+import { usePathname, useRouter } from 'next/navigation';
+import { DrawerMenuProps, UseLayoutDrawerProps } from '../model/types';
+import DrawerMenuItem from './drawer-menu-item';
 
 interface Props {
-    open: boolean;
-    menuList: DrawerMenuItem[];
+    menuList: DrawerMenuProps[];
+    useLayoutDrawer: UseLayoutDrawerProps;
 }
 
-const DrawerMenuList: React.FC<Props> = ({ open, menuList }) => {
+const DrawerMenuList: React.FC<Props> = ({ menuList, useLayoutDrawer }) => {
+    const pathName = usePathname();
+    const router = useRouter();
+
     return (
         <List>
-            {menuList.map((item, index) => (
-                <ListItem key={index} disablePadding sx={{ display: 'block' }}>
-                    <ListItemButton
-                        sx={{
-                            minHeight: 48,
-                            justifyContent: open ? 'initial' : 'center',
-                            px: 2.5,
-                        }}
-                    >
-                        <ListItemIcon
-                            sx={{
-                                minWidth: 0,
-                                mr: open ? 2 : 'auto',
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}
-                        >
-                            {item.labelIcon}
-                        </ListItemIcon>
-                        <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
-                    </ListItemButton>
-                </ListItem>
+            {menuList.map((menuItem, index) => (
+                <DrawerMenuItem key={index} menuItem={menuItem} pathName={pathName} useLayoutDrawer={useLayoutDrawer} />
             ))}
         </List>
     )
