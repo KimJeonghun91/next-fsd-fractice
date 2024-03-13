@@ -19,12 +19,12 @@ export const DRAWER_MENU_LIST = [
             },
             {
                 title: '보드2',
-                path: PrivateRoutes.Board,
+                path: PrivateRoutes.Board2,
                 includePaths: [],
             },
             {
                 title: '보드3',
-                path: PrivateRoutes.Board,
+                path: PrivateRoutes.Board3,
                 includePaths: [],
             },
         ],
