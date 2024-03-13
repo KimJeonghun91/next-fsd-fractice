@@ -18,7 +18,7 @@ export const DRAWER_MENU_LIST = [
                 includePaths: [],
             },
             {
-                title: '보드2',
+                title: '보드222222',
                 path: PrivateRoutes.Board2,
                 includePaths: [],
             },

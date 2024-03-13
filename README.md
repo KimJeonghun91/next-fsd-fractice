@@ -26,6 +26,8 @@ yarn dev
 
 [ ] state 공유를 하려면 전역 상태관리가 최선일까?
 
+[ ] LayoutDrawer 애니메이션 미동작
+
 
 ### 참고
 
