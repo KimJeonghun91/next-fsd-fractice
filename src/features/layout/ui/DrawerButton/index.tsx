@@ -1,14 +1,18 @@
 import * as React from "react";
 import { IconRightOpen } from '@/shared/assets/images/index';
 import IconButton from 'my-mui/material/IconButton';
+import { UseLayoutDrawerProps } from "@/widgets/LayoutDrawer/model/types";
 
 interface Props {
-    handleDrawer: () => void;
-    open: boolean;
+    useLayoutDrawer: UseLayoutDrawerProps;
 }
 
-export const DrawerButton: React.FC<Props> = ({ handleDrawer, open }) => {
+export const DrawerButton: React.FC<Props> = ({ useLayoutDrawer }) => {
     const [rotated, setRotated] = React.useState(false);
+    const {
+        open,
+        handleDrawer,
+    } = useLayoutDrawer;
 
     React.useEffect(() => {
         setRotated(open);

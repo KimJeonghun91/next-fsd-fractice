@@ -4,7 +4,7 @@ import React from 'react';
 import Box from 'my-mui/material/Box';
 import { DrawerButton } from '@/features/layout';
 import { DrawerMenuItem } from './model/types';
-import useLayoutDrawer from './model/useLayoutDrawer';
+import { default as useLayoutDrawerInstance } from './model/useLayoutDrawer';
 import Drawer from './ui/drawer';
 
 interface Props {
@@ -12,15 +12,12 @@ interface Props {
 }
 
 const LayoutDrawer: React.FC<Props> = ({ menuList }) => {
-    const {
-        open,
-        handleDrawer,
-    } = useLayoutDrawer();
+    const useLayoutDrawer = useLayoutDrawerInstance();
 
     return (
         <Box sx={{ position: 'relative' }}>
-            <Drawer menuList={menuList} open={open} />
-            <DrawerButton handleDrawer={handleDrawer} open={open} />
+            <Drawer menuList={menuList} useLayoutDrawer={useLayoutDrawer} />
+            <DrawerButton useLayoutDrawer={useLayoutDrawer} />
         </Box>
     )
 }
