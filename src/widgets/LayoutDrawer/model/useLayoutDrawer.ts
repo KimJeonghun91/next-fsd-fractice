@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Theme, CSSObject } from 'my-mui/material/styles';
 import { useRouter } from 'next/navigation';
-import { DrawerMenuProps } from './types';
 
 const useLayoutDrawer = () => {
     const router = useRouter();
     const [open, setOpen] = useState(false);
     const [isSubMenuOpen, setSubMenuOpen] = useState(false);
-    const drawerWidth = 240;
+    const drawerWidth = 200;
     const handleToggleSubMenu = () => setSubMenuOpen(!isSubMenuOpen);
 
     const handleDrawer = () => {

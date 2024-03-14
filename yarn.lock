@@ -1928,7 +1928,7 @@ ms@^2.1.1:
 
 "my-mui@https://github.com/KimJeonghun91/mui-integrated":
   version "0.0.1"
-  resolved "https://github.com/KimJeonghun91/mui-integrated#9f994bfabc1e94e48074c8523894f75e841c6b29"
+  resolved "https://github.com/KimJeonghun91/mui-integrated#5268019d1bbcb9aa199db145e1b43304526206a3"
   dependencies:
     "@floating-ui/react-dom" "2.0.8"
     "@popperjs/core" "2.11.8"

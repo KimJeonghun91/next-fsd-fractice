@@ -58,9 +58,9 @@ const DrawerMenuItem: React.FC<Props> = ({
                             alignItems: 'center',
                             cursor: 'pointer',
                             borderRadius: 2.5,
-                            '&:hover': {
-                                backgroundColor: '#EDFAFF'
-                            },
+                            // '&:hover': {
+                            //     backgroundColor: '#EDFAFF'
+                            // },
                         }}
                     >
                         {

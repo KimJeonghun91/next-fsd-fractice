@@ -19,7 +19,7 @@ export const DrawerButton: React.FC<Props> = ({ open, handleDrawer }) => {
             sx={{
                 position: 'absolute',
                 top: 47,
-                right: -16,
+                right: -13,
                 zIndex: 9999,
                 backgroundColor: 'rgba(255, 255, 255, 0.77)',
                 borderRadius: 16,
@@ -27,7 +27,7 @@ export const DrawerButton: React.FC<Props> = ({ open, handleDrawer }) => {
                 backdropFilter: 'blur(7.9px)',
                 WebkitBackdropFilter: 'blur(7.9px)',
                 border: '1px solid rgba(230, 230, 230, 1)',
-                padding: 0.5,
+                padding: 0.2,
                 transition: 'transform 0.8s ease',
                 transform: rotated ? 'rotate(180deg)' : 'rotate(0deg)',
             }}

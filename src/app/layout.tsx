@@ -29,6 +29,7 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,17 +37,17 @@ export default function RootLayout({
 }>) {
   return (
     <StyledEngineProvider injectFirst>
-      <html lang="ko">
-        <body className={defaultFont.className}>
-          <Box sx={{ display: 'flex' }}>
-            <LayoutDrawer menuList={DRAWER_MENU_LIST} />
-            
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              {children}
+        <html lang="ko">
+          <body className={defaultFont.className}>
+            <Box sx={{ display: 'flex' }}>
+              <LayoutDrawer menuList={DRAWER_MENU_LIST} />
+
+              <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                {children}
+              </Box>
             </Box>
-          </Box>
-        </body>
-      </html>
+          </body>
+        </html>
     </StyledEngineProvider>
   );
 }

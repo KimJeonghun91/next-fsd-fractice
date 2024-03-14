@@ -27,9 +27,6 @@ const DrawerMenuSub: React.FC<Props> = ({ menuItem, isSelected, open }) => {
                     alignItems: 'center',
                     cursor: 'pointer',
                     borderRadius: 2.5,
-                    '&:hover': {
-                        backgroundColor: '#EDFAFF'
-                    },
                 }}
             >
                 <ListItemText
