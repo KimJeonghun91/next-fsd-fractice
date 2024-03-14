@@ -1,4 +1,4 @@
-import {  Theme, CSSObject } from "my-mui/material";
+import {  Theme, CSSObject } from "@mui/material";
 
 export interface DrawerMenuSubProps {
     title: string;

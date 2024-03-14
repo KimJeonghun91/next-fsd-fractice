@@ -1,9 +1,9 @@
 import "@/shared/styles/globals.css";
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
-import { StyledEngineProvider } from 'my-mui/material/styles';
+import { StyledEngineProvider } from '@mui/material/styles';
 import { Noto_Sans_KR } from "next/font/google";
-import Box from 'my-mui/material/Box';
+import Box from '@mui/material/Box';
 import { DRAWER_MENU_LIST } from "@/shared/constants/drawerMenuList";
 import LayoutDrawer from "@/widgets/LayoutDrawer";
 

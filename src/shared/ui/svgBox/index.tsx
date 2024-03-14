@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box } from "my-mui/material";
+import { Box } from "@mui/material";
 
 interface Props {
     svg: React.JSX.Element;

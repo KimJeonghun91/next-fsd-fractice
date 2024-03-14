@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Box from 'my-mui/material/Box';
+import Box from '@mui/material/Box';
 import { DrawerButton } from '@/features/layout';
 import { DrawerMenuProps } from './model/types';
 import useLayoutDrawer from './model/useLayoutDrawer';

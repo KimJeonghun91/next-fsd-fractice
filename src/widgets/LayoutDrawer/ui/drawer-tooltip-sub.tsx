@@ -1,4 +1,5 @@
-import { Box, Divider, Typography } from "my-mui/material";
+import { Box, Divider, Typography } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/navigation';
 import { DrawerMenuProps } from "../model/types";
 
@@ -8,6 +9,8 @@ interface Props {
 
 const DrawerTooltipSub: React.FC<Props> = ({ menuItem }) => {
     const router = useRouter();
+    const theme = useTheme();
+
     return (
         <Box>
             {menuItem.subMenu?.map((subMenuItem, index) => (
@@ -17,7 +20,7 @@ const DrawerTooltipSub: React.FC<Props> = ({ menuItem }) => {
                         py: 1,
                         cursor: 'pointer',
                         '&:hover': {
-                            backgroundColor: '#EDFAFF'
+                            backgroundColor: theme.palette.action.hover
                         },
                         borderRadius: 2
                     }} onClick={() => { router.push(subMenuItem.path); }}>

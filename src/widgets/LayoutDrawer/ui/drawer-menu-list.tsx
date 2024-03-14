@@ -1,4 +1,4 @@
-import List from 'my-mui/material/List';
+import List from '@mui/material/List';
 import { usePathname, useRouter } from 'next/navigation';
 import { DrawerMenuProps } from '../model/types';
 import DrawerMenuItem from './drawer-menu-item';

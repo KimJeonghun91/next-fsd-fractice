@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Theme, CSSObject } from 'my-mui/material/styles';
+import { Theme, CSSObject } from '@mui/material/styles';
 import { useRouter } from 'next/navigation';
 
 const useLayoutDrawer = () => {

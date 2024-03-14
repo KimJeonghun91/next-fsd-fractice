@@ -1,6 +1,6 @@
 "use client"
 
-import Button from 'my-mui/material/Button';
+import Button from '@mui/material/Button';
 import styles from "./ui/home.module.css";
 
 export default function Board3() {

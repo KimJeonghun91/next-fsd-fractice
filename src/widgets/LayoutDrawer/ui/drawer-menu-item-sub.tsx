@@ -1,6 +1,6 @@
-import ListItem from 'my-mui/material/ListItem';
-import ListItemButton from 'my-mui/material/ListItemButton';
-import ListItemText from 'my-mui/material/ListItemText';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 import { useRouter } from 'next/navigation';
 import { DrawerMenuSubProps } from '../model/types';
 

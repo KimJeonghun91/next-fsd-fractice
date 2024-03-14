@@ -1,7 +1,7 @@
 import React from 'react';
-import MuiDrawer from 'my-mui/material/Drawer';
-import Divider from 'my-mui/material/Divider';
-import { CSSObject, Theme, styled } from 'my-mui/material/styles';
+import MuiDrawer from '@mui/material/Drawer';
+import Divider from '@mui/material/Divider';
+import { CSSObject, Theme, styled } from '@mui/material/styles';
 import { DrawerMenuProps } from '../model/types';
 import DrawerHeader from './drawer-header';
 import DrawerMenuList from './drawer-menu-list';
