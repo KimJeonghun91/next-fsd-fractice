@@ -6,6 +6,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import Box from '@mui/material/Box';
 import { DRAWER_MENU_LIST } from "@/shared/constants/drawerMenuList";
 import LayoutDrawer from "@/widgets/LayoutDrawer";
+import ThemeClient from "@/shared/theme";
 
 const defaultFont = Noto_Sans_KR({ subsets: ["latin"] });
 
@@ -37,8 +38,9 @@ export default function RootLayout({
 }>) {
   return (
     <StyledEngineProvider injectFirst>
-        <html lang="ko">
-          <body className={defaultFont.className}>
+      <html lang="ko">
+        <body className={defaultFont.className}>
+          <ThemeClient>
             <Box sx={{ display: 'flex' }}>
               <LayoutDrawer menuList={DRAWER_MENU_LIST} />
 
@@ -46,8 +48,9 @@ export default function RootLayout({
                 {children}
               </Box>
             </Box>
-          </body>
-        </html>
+          </ThemeClient>
+        </body>
+      </html>
     </StyledEngineProvider>
   );
 }
