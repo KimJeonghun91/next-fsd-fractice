@@ -3,6 +3,7 @@
 import { ThemeOptions, ThemeProvider, createTheme } from "@mui/material";
 import { useMemo } from "react";
 import customPalette from "./palette";
+import customComponents from "./components";
 
 export default function ThemeClient({
     children,
@@ -19,6 +20,7 @@ export default function ThemeClient({
     );
 
     const theme = createTheme(customTheme);
+    theme.components = customComponents(theme);
 
     return (
         <ThemeProvider theme={theme}>

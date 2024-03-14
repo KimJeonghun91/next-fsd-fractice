@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -25,6 +25,7 @@ const DrawerMenuItem: React.FC<Props> = ({
     open,
 }) => {
     const router = useRouter();
+    const [isSubMenuSelect, setIsSubMenuSelect] = useState(false);
 
     const {
         isSubMenuOpen,
@@ -41,14 +42,14 @@ const DrawerMenuItem: React.FC<Props> = ({
 
     return (
         <SubMenuToolTip
-            title={!open && menuItem.subMenu && menuItem.subMenu.length > 0 ? <DrawerTooltipSub menuItem={menuItem} /> : ''}
+            title={!open && menuItem.subMenu && menuItem.subMenu.length > 0 ? <DrawerTooltipSub menuItem={menuItem} pathName={pathName} /> : ''}
             placement="right"
         >
             <Box sx={{ px: 0.8, position: 'relative' }}>
                 <ListItem disablePadding sx={{ display: 'block' }}>
                     <ListItemButton
                         onClick={handleTitleMenuClick}
-                        selected={menuItem.path === pathName}
+                        selected={isSubMenuSelect || menuItem.path === pathName}
                         sx={{
                             height: 36,
                             justifyContent: open ? 'initial' : 'center',
@@ -80,7 +81,6 @@ const DrawerMenuItem: React.FC<Props> = ({
                         }
 
                         <ListItemText
-                            primaryTypographyProps={{ fontSize: '14px', color: '#353C3F' }}
                             primary={menuItem.title}
                             sx={{ opacity: open ? 1 : 0 }}
                         />
@@ -97,15 +97,12 @@ const DrawerMenuItem: React.FC<Props> = ({
                     </ListItemButton>
                 </ListItem>
 
-                {
-                    open && (
-                        <Collapse in={isSubMenuOpen} timeout="auto" unmountOnExit>
-                            {menuItem?.subMenu?.map((subMenuItem, subIndex) => (
-                                <DrawerMenuSub key={subIndex} menuItem={subMenuItem} isSelected={subMenuItem.path === pathName} open={open} />
-                            ))}
-                        </Collapse>
-                    )
-                }
+                <Collapse in={isSubMenuOpen} timeout="auto" unmountOnExit sx={{ display: open ? 'flex' : 'none' }}>
+                    {menuItem?.subMenu?.map((subMenuItem, subIndex) => (
+                        <DrawerMenuSub key={subIndex} menuItem={subMenuItem} isSelected={subMenuItem.path === pathName} open={open} />
+                    ))}
+                </Collapse>
+
             </Box>
         </SubMenuToolTip>
     )

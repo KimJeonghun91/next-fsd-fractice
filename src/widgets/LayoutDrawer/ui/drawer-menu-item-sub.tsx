@@ -30,7 +30,6 @@ const DrawerMenuSub: React.FC<Props> = ({ menuItem, isSelected, open }) => {
                 }}
             >
                 <ListItemText
-                    primaryTypographyProps={{ fontSize: '14px', color: '#353C3F' }}
                     primary={menuItem.title}
                     sx={{ opacity: open ? 1 : 0, pl: 4.4 }}
                 />

@@ -5,9 +5,10 @@ import { DrawerMenuProps } from "../model/types";
 
 interface Props {
     menuItem: DrawerMenuProps;
+    pathName: string;
 }
 
-const DrawerTooltipSub: React.FC<Props> = ({ menuItem }) => {
+const DrawerTooltipSub: React.FC<Props> = ({ menuItem, pathName }) => {
     const router = useRouter();
     const theme = useTheme();
 
@@ -24,7 +25,7 @@ const DrawerTooltipSub: React.FC<Props> = ({ menuItem }) => {
                         },
                         borderRadius: 2
                     }} onClick={() => { router.push(subMenuItem.path); }}>
-                        <Typography variant="body2" color="inherit">{subMenuItem.title}</Typography>
+                        <Typography variant="body2" color={subMenuItem.path === pathName ? theme.palette.primary.main :"inherit"}>{subMenuItem.title}</Typography>
                     </Box>
 
                     {
