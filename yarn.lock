@@ -254,7 +254,7 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@kimjeonghun91/my-mui@^0.0.28":
+"@kimjeonghun91/my-mui@*":
   version "0.0.28"
   resolved "https://npm.pkg.github.com/download/@kimjeonghun91/my-mui/0.0.28/05c40ddb40d22026cf233ae4d3741d85eb6b8ea2#05c40ddb40d22026cf233ae4d3741d85eb6b8ea2"
   integrity sha512-LDfHowytj4H3+M5W582K3QHpwakOmdgU4F0zoBOnVXLBPJnWsgceu0AY3qCixaWgRvOCdFABirX89xRGdafH5g==
