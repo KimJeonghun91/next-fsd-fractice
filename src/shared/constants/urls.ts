@@ -1,7 +1,10 @@
 /**
  * Public Routes
  */
-export const Login = '/login';
+export const PublicRoutes = {
+    Landing: '/',
+    Login: '/login',
+};
 
 /**
  * Private Routes

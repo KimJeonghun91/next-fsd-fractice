@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
+import { StyledEngineProvider } from '@mui/material/styles';
 import { Noto_Sans_KR } from "next/font/google";
 import Box from '@mui/material/Box';
-import { StyledEngineProvider } from '@mui/system';
 import ThemeClient from "@kimjeonghun91/my-mui/shared/theme";
-import LayoutDrawer from '@kimjeonghun91/my-mui/widgets/LayoutDrawer';
-import { DRAWER_MENU_LIST } from '@/shared/constants/drawerMenuList';
-import { LogoGoogle, LogoGoogleMini } from '@/shared/assets/images';
+import LayoutDrawer from "@kimjeonghun91/my-mui/widgets/LayoutDrawer";
+import { DRAWER_MENU_LIST } from '../shared/constants/drawerMenuList';
+import { LogoGoogle, LogoGoogleMini } from '../shared/assets/images';
 import "@kimjeonghun91/my-mui/shared/css/globals.css";
 
 const defaultFont = Noto_Sans_KR({ subsets: ["latin"] });
@@ -49,7 +49,7 @@ export default function RootLayout({
                 logoClose={<LogoGoogleMini />}
               />
 
-              <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+              <Box component="main" sx={{ flexGrow: 1 }}>
                 {children}
               </Box>
             </Box>

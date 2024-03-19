@@ -1,6 +1,6 @@
-import Home from "./home/page";
+import Login from "./login/page";
 
 const Page = async ({}) => {
-    return <Home />
+    return <Login />
 };
 export default Page;
